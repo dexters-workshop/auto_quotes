@@ -10,6 +10,7 @@ I was adding really cool quotes related to 'habit-formation' to our google sheet
 
 I wanted to automate the process and have awesome quotes sent via text message and that's how this project got started.
 
+THE IDEA AND WHERE I'M HEADED
 I'm creating a chron-job to pull habit-related quotes from a database I'm building. The idea is simple: 
 📌 Access member info from our Google Sheet.
 📌 Pull/Cleanse Phone data using reg-ex, tidyverse.
