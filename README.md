@@ -10,7 +10,7 @@ I was adding really cool quotes related to 'habit-formation' to our google sheet
 
 I wanted to automate the process and have awesome quotes sent via text message and that's how this project got started.
 
-THE IDEA AND WHERE I'M HEADED
+THE IDEA AND WHERE I'M HEADED  
 I'm creating a chron-job to pull habit-related quotes from a database I'm building. The idea is simple: 
 
 📌 Access member info from our Google Sheet.  
@@ -18,7 +18,7 @@ I'm creating a chron-job to pull habit-related quotes from a database I'm buildi
 📌 Build a small database (DB) of quotes.
 📌   
 📌 Grab an awesome 'habit quote' from DB.  
-📌 Use SMS to text the group a Sweet quote.  t up on an automated schedule (chron-job)
+📌 Use SMS to text the group a Sweet quote.  t   up on an automated schedule (chron-job)
 
 I'm th  inking of this as the first quote: 
 "be the person with embarrassing goals and impressive results instead of one of the many people with impressive goals and embarrassing results"
