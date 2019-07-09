@@ -16,5 +16,6 @@ I'm creating a chron-job to pull habit-related quotes from a database I'm buildi
 📌 Use SMS to text the group a Sweet quote.  
 📌 Set up on an automated schedule.    
 
-I'm thinking of this as the first quote: 
+I'm thinking of this as the first quote:  
+
 "be the person with embarrassing goals and impressive results instead of one of the many people with impressive goals and embarrassing results"
