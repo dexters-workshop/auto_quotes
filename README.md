@@ -12,6 +12,7 @@ I wanted to automate the process and have awesome quotes sent via text message a
 
 THE IDEA AND WHERE I'M HEADED
 I'm creating a chron-job to pull habit-related quotes from a database I'm building. The idea is simple: 
+
 📌 Access member info from our Google Sheet.
 📌 Pull/Cleanse Phone data using reg-ex, tidyverse.
 📌 Build a small database (DB) of quotes.
