@@ -6,7 +6,7 @@ library(googlesheets)  # for accessing google drive files
 library(readxl)        # for reading in excel files
 library(twilio)        # for SMS messaging
 
-# 1.0 Get Phone Numbers ----
+# 1.0 Get Member Phone Numbers ----
 
 # 1.1 Access Google Sheet ----
 
