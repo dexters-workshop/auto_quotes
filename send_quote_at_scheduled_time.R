@@ -43,6 +43,7 @@ cleaned_phone_numbers_tbl <- member_info_tbl %>%
 cleaned_phone_numbers_list <- cleaned_phone_numbers_tbl %>%
     pull(Number)
 
+
  # 2.0 Pull Random Quote ----
 
 # Read in quotes table
@@ -76,10 +77,9 @@ my_twilio_number <- Sys.getenv("my_twilio_number")
 
 # Send Message via SMS
 tw_send_message(from = my_twilio_number,
-                to   = "9162304584", 
+                to   = cleaned_phone_numbers_list[1], 
                 body = message_to_group)
 
-cleaned_phone_numbers_list
 
 # NEXT ACTIONS:
     # 1) Learn how to send to 2 people
