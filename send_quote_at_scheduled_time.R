@@ -23,17 +23,25 @@ member_info_tbl <- app4that_gs_obj %>%
     gs_read_csv("Member Contact Info", skip = 2)
 
 # 1.3 Cleanse Phone # Data ----
-member_info_tbl %>% 
+
+# Clean up Phone # Data
+cleaned_phone_numbers_tbl <- member_info_tbl %>% 
     
     # Get column w/member phone #s
     select(Number) %>% 
     
-    # Cleanse phone numbers by removing all non-numerical values
+    # Cleanse phone #s - remove non-numerical values
     mutate(Number = str_replace_all(
         string = Number,
         pattern = "[^[:alnum:]]",
-        replacement = ""))
+        replacement = "")) %>% 
+    
+    # Convert character to numeric
+    mutate_if(is.character, as.numeric) 
 
+# Save Phone #s in List
+cleaned_phone_numbers_list <- cleaned_phone_numbers_tbl %>%
+    pull(Number)
 
  # 2.0 Pull Random Quote ----
 
@@ -49,13 +57,12 @@ awesome_quote_chr <- awesome_quotes_tbl %>%
 # 3.0 Build Message for Send ----
 
 # 3.1 Setup Message Prefix/Suffix ----
-prefix_chr <- "Weekly Quote from the App4That Group: \n\n"
+prefix_chr <- "ALPHA-TESTING\n\nWeekly Quote from the App4That Group: \n\n"
 suffix_chr <- "\n\nHave a Great Week and Keep up the Great Work <><"
 
 # 3.2 Combine Pieces for SMS Message ----
 message_to_group <- str_glue(
-    "{prefix_chr}\"{awesome_quote_chr}\"{suffix_chr}"
-    )
+    "{prefix_chr}\"{awesome_quote_chr}\"{suffix_chr}")
 
 # 3.0 Send Quote as Text via SMS ----
 
@@ -69,6 +76,12 @@ my_twilio_number <- Sys.getenv("my_twilio_number")
 
 # Send Message via SMS
 tw_send_message(from = my_twilio_number,
-                to   = my_phone_number, 
+                to   = "9162304584", 
                 body = message_to_group)
 
+cleaned_phone_numbers_list
+
+# NEXT ACTIONS:
+    # 1) Learn how to send to 2 people
+    # 2) Add more quotes
+    # 3) Pull random quote
