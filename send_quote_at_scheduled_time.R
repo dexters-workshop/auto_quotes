@@ -51,8 +51,9 @@ awesome_quotes_tbl <- read_excel("01_Data/awesome_quotes.xlsx")
 
 # Randomly choose an awesome quote (draft stage)
 awesome_quote_chr <- awesome_quotes_tbl %>% 
+    sample_n(size = 1) %>% 
     select(quote) %>% 
-    pull(quote) 
+    pull(quote)
 
 
 # 3.0 Build Message for Send ----
@@ -77,7 +78,7 @@ my_twilio_number <- Sys.getenv("my_twilio_number")
 
 # Send Message via SMS
 tw_send_message(from = my_twilio_number,
-                to   = cleaned_phone_numbers_list[1], 
+                to   = cleaned_phone_numbers_list[2], 
                 body = message_to_group)
 
 
