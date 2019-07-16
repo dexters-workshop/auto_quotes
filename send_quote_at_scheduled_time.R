@@ -1,10 +1,16 @@
 # CHRON JOB FOR SENDING HABIT RELATED QUOTES
 
+# 1) Pulls Member Contact Details from Google Sheets
+# 2) Selects Habit Related Quote from table
+# 3) Builds Message for SMS as Text
+# 4) Sends Quote/Message to each Group Member
+
 # Load libraries
 library(tidyverse)     # workhorse package
 library(googlesheets)  # for accessing google drive files
 library(readxl)        # for reading in excel files
 library(twilio)        # for SMS messaging
+
 
 # 1.0 Get Member Phone Numbers ----
 
@@ -36,7 +42,7 @@ cleaned_phone_numbers_tbl <- member_info_tbl %>%
         pattern = "[^[:alnum:]]",
         replacement = "")) %>% 
     
-    # Convert character to numeric
+    # Convert phone #s from character to numeric
     mutate_if(is.character, as.numeric) 
 
 # Save Phone #s in List
@@ -51,22 +57,30 @@ awesome_quotes_tbl <- read_excel("01_Data/awesome_quotes.xlsx")
 
 # Randomly choose an awesome quote (draft stage)
 awesome_quote_chr <- awesome_quotes_tbl %>% 
+    
+    # Select Random Row in Quotes Table
     sample_n(size = 1) %>% 
-    select(quote) %>% 
-    pull(quote)
+    
+    # Select Quote + Author and combine them in new column
+    select(quote, author) %>% 
+    mutate(quote_with_author = str_glue(
+        "\"{quote}\" - {author}"
+    )) %>% 
+    select(quote_with_author) %>% 
+    pull(quote_with_author)
 
 
 # 3.0 Build Message for Send ----
 
 # 3.1 Setup Message Prefix/Suffix ----
 prefix_chr <- "ALPHA-TESTING\n\nWeekly Quote from the App4That Group: \n\n"
-suffix_chr <- "\n\nHave a Great Week and Keep up the Great Work <><"
+suffix_chr <- "\n\nHave a Great Week <><"
 
 # 3.2 Combine Pieces for SMS Message ----
 message_to_group <- str_glue(
-    "{prefix_chr}\"{awesome_quote_chr}\"{suffix_chr}")
+    "{prefix_chr}{awesome_quote_chr}{suffix_chr}")
 
-# 3.0 Send Quote as Text via SMS ----
+# 4.0 Send Quote as Text via SMS ----
 
 # Set twilio account SID and token as environmental variables
 Sys.setenv(TWILIO_SID   = Sys.getenv("my_twilio_sid"))
@@ -77,12 +91,19 @@ my_phone_number  <- Sys.getenv("my_phone_number")
 my_twilio_number <- Sys.getenv("my_twilio_number")
 
 # Send Message via SMS
-tw_send_message(from = my_twilio_number,
-                to   = cleaned_phone_numbers_list[2], 
-                body = message_to_group)
 
+# Loop to Send Each Member the Message
+for (member in 1:length(cleaned_phone_numbers_list)) {
+    
+    # Loop over Member phone #s and send Message
+    tw_send_message(from = my_twilio_number,
+                    to   = cleaned_phone_numbers_list[member], 
+                    body = message_to_group)
+}
+    
 
-# NEXT ACTIONS:
-    # 1) Learn how to send to 2 people
-    # 2) Add more quotes
-    # 3) Pull random quote
+# NEXT ACTIONS
+    # 1) Research how to setup a Chron Job
+    # 2) Add 5-10 more quotes to the data table.
+    # 3) Write code that send multiple members a text, one at a time
+    # 4) Consider personalizing by pulling member names
