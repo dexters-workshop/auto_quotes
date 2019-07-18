@@ -1,15 +1,16 @@
 # CHRON JOB FOR SENDING HABIT RELATED QUOTES
 
+# 0.0 HIGH-LEVEL SCRIPT OVERVIEW ----
 # 1) Pulls Member Contact Details from Google Sheets
 # 2) Selects Habit Related Quote from table
 # 3) Builds Message for SMS as Text
-# 4) Sends Quote/Message to each Group Member
+# 4) Sends SMS Quote/Message to each Group Member
 
 # Load libraries
 library(tidyverse)     # workhorse package
 library(googlesheets)  # for accessing google drive files
 library(readxl)        # for reading in excel files
-library(twilio)        # for SMS messaging
+library(twilio)        # interface to Twilio API for R
 
 
 # 1.0 Get Member Phone Numbers ----
