@@ -21,12 +21,16 @@ gs_auth()
 
 # Register my Google Sheet as a GS object
 app4that_gs_obj <- gs_title("app4that_test")
+#app4that_gs_obj <- gs_title("app4that")
 
 # 1.2 Get Member Contact Info ----
 
 # Read in member data from gs object
 member_info_tbl <- app4that_gs_obj %>% 
-    gs_read_csv("Member Contact Info", skip = 2)
+    
+    # Specify worksheet to pull data from
+    gs_read_csv(ws = "Member Contact Info", 
+                skip = 2)
 
 # 1.3 Cleanse Phone # Data ----
 
