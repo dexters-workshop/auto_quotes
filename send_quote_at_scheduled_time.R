@@ -89,12 +89,24 @@ awesome_quote_chr <- awesome_quotes_tbl %>%
 # 3.0 Build Message for Send ----
 
 # 3.1 Setup Message Prefix/Suffix ----
-prefix_chr <- "ALPHA-TESTING\n\nWeekly Quote from the App4That Group: \n\n"
-suffix_chr <- "\n\nHave a Great Week <><"
+
+# Setup Monday Message Prefix/Suffix
+prefix_mon_chr <- "BETA-TESTING\n\nWeekly Quote from the App4That Group: \n\n"
+suffix_mon_chr <- "\n\nHave a Great Week <><"
+
+# Setup Friday Message Prefix/Suffix
+prefix_fri_chr <- "BETA-TESTING\n\nHappy Friday App4That Group Members: \n\n"
+suffix_fri_chr <- "\n\nHave an Awesome Weekend <><"
 
 # 3.2 Combine Pieces for SMS Message ----
+
+# Build Monday Message
 message_to_group <- str_glue(
-    "{prefix_chr}{awesome_quote_chr}{suffix_chr}")
+    "{prefix_fri_chr}{awesome_quote_chr}{suffix_fri_chr}")
+
+# Build Friday Message
+message_to_group <- str_glue(
+    "{prefix_fri_chr}{awesome_quote_chr}{suffix_fri_chr}")
 
 # 4.0 Send Quote as Text via SMS ----
 
