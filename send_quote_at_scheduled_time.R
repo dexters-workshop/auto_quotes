@@ -5,13 +5,24 @@
 # 2) Selects Habit Related Quote from table
 # 3) Builds Message for SMS as Text
 # 4) Sends SMS Quote/Message to each Group Member
+        # Planning to have a Mon messsage + Fri message
+        # Once i get further along in setting cron-job
 
 # Load libraries
 library(tidyverse)     # workhorse package
 library(googlesheets)  # for accessing google drive files
 library(readxl)        # for reading in excel files
 library(twilio)        # interface to Twilio API for R
+library(cronR)         # for managing cron jobs
+library(lubridate)     # for working with dates
 
+
+# Variable for Controlling which message to send
+wk_day_chr <- wday(today(), label = T, abbr = F)
+    # this will be for chron-job later on (alpha-stage)
+    # SMS messages will go out Mon + Fri
+    # Pulling day from today() will allow for controlling  script flow:
+        # which message to send: week or weekend message.
 
 # 1.0 Get Member Phone Numbers ----
 
@@ -105,10 +116,3 @@ for (member in 1:length(cleaned_phone_numbers_list)) {
                     to   = cleaned_phone_numbers_list[member], 
                     body = message_to_group)
 }
-    
-
-# NEXT ACTIONS
-    # 1) Research how to setup a Chron Job
-    # 2) Add 5-10 more quotes to the data table.
-    # 3) Write code that send multiple members a text, one at a time
-    # 4) Consider personalizing by pulling member names
