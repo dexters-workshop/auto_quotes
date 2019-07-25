@@ -19,8 +19,8 @@ The idea is simple:
 Thanks to Sean Kross for building the Twilio package for R:  
 ☎️ An interface to the Twilio API for R
 
-
-This was the first message to the group: 
+---
+**This was the first message to the group:**
 
 Weekly Quote from the App4That Group: 
 
