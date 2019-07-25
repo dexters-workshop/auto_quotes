@@ -10,7 +10,7 @@ build_message <- function(day_of_week) {
     if (!day_of_week %in% c("mon", "fri")) {
         stop("Day of week is outside the normal SMS send day.")
         
-        # If Monday, Build Monday Message
+    # If Monday, Build Monday Message
     } else if (day_of_week == "mon") {
         
         # Setup Monday Message Prefix/Suffix
@@ -21,7 +21,7 @@ build_message <- function(day_of_week) {
         message_to_group <- str_glue(
             "{prefix_mon_chr}{awesome_quote_chr}{suffix_mon_chr}")
         
-        # If Friday, Build Friday Message   
+    # If Friday, Build Friday Message   
     } else if (day_of_week == "fri") {
         
         # Setup Friday Message Prefix/Suffix
@@ -32,7 +32,7 @@ build_message <- function(day_of_week) {
         message_to_group <- str_glue(
             "{prefix_fri_chr}{awesome_quote_chr}{suffix_fri_chr}")
         
-        # If alt. problem, halt + give error message
+    # If alt. problem, halt + give error message
     } else {
         stop("Unknown problem, script halted")
     } 
