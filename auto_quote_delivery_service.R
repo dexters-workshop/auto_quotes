@@ -1,10 +1,10 @@
 # AUTOMATED SMS BY PULLING CONTACT INFO FROM GOOGLE-SHEETS
 
 # 0.0 HIGH-LEVEL SCRIPT OVERVIEW ----
-    # 1) Pulls Member Contact Details from Google Sheets
-    # 2) Selects Habit/Systems Related Quote from data-table
-    # 3) Builds Message for SMS (as Text)
-    # 4) Sends SMS Quote/Message to each Group Member
+    # 1.0 Pulls Member Contact Details from Google Sheets
+    # 2.0 Selects Habit/Systems Related Quote from data-table
+    # 3.0 Builds Message for SMS Send
+    # 4.0 Send SMS Message/Quote to each Group Member
 
 # Current settings for our Monday/Friday Sends to group
 
@@ -65,6 +65,8 @@ cleaned_phone_numbers_list <- cleaned_phone_numbers_tbl %>%
 # Read in quotes table
 awesome_quotes_tbl <- read_excel("01_Data/awesome_quotes.xlsx")
 
+# 2.1 Get + Format Quote ----
+
 # Randomly Select Awesome Quote + Prep for SMS
 awesome_quote_chr <- awesome_quotes_tbl %>% 
     
@@ -106,7 +108,7 @@ message_to_group <- build_message(wk_day_chr)
 
 # 4.0 Send Quote as Text via SMS ----
 
-# 4.1 Get + Set Environmental Variables
+# 4.1 Get + Set Environmental Variables ----
 
 # Set twilio account SID and token as environmental variables
 Sys.setenv(TWILIO_SID   = Sys.getenv("my_twilio_sid"))
