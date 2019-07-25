@@ -1,4 +1,4 @@
-# ☎️ auto_quotes: mini-project to add value to a meetup I'm part of
+# ☎️ auto_quotes ☎️
 
 Automated delivery service that pulls member-contact info from google-sheets, then sends awesome quotes via SMS/Twilio.
 
@@ -13,15 +13,14 @@ The idea is simple:
 📌 Build a small database (DB) of quotes.  
 📌 Grab an awesome 'habit quote' from DB.  
 📌 Build Message by Combining Parts: prefix/quote/suffix
-📌 Use SMS to text the group a cool message w/an awesome quote!
-📌 Set up on an automated schedule (in the works).    
+📌 Us  e SMS to text the group a cool message w/an awesome quote!
+📌 Set   up on an automated schedule (in the works).    
 
-This was the first quote to the group: 
+Thiwas the first quote to the group: 
 
-"Be the person with embarrassing goals and impressive results instead of one of the many people with impressive goals and embarrassing results" - Stephen Guise
+"Be the person with embarrassing goals and impressive results instead of one of the many people with impressive goals and embarrassing results" - Step  
+en Guise
 
-Feel free to reach out via LinkedIn if you have any questions
+Feel frto Sean Kross for building the Twilio package for R:
 
-Thanks to Sean Kross for building the Twilio package for R - 
-
-☎️ An interface to the Twilio API for R
+☎️ An   nterface to the Twilio API for R
