@@ -1,4 +1,4 @@
-# ☎️ auto_quotes ☎️
+# auto_quotes
 
 Automated delivery service that pulls member-contact info from google-sheets, then sends awesome quotes via SMS/Twilio.
 
