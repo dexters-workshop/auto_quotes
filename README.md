@@ -12,15 +12,14 @@ The idea is simple:
 📌 Pull/Cleanse Phone data using reg-ex, tidyverse.  
 📌 Build a small database (DB) of quotes.  
 📌 Grab an awesome 'habit quote' from DB.  
-📌 Build Message by Combining Parts: prefix/quote/suffix
-📌 Us  e SMS to text the group a cool message w/an awesome quote!
-📌 Set   up on an automated schedule (in the works).    
+📌 Build Message by Combining Parts: prefix/quote/suffix  
+📌 Use SMS to text the group a cool message w/an awesome quote!  
+📌 Set up on an automated schedule (in the works).  
 
-Thiwas the first quote to the group: 
+This was the first quote to the group: 
 
-"Be the person with embarrassing goals and impressive results instead of one of the many people with impressive goals and embarrassing results" - Step  
-en Guise
+"Be the person with embarrassing goals and impressive results instead of one of the many people with impressive goals and embarrassing results"  
+- Stephen Guise
 
-Feel frto Sean Kross for building the Twilio package for R:
-
-☎️ An   nterface to the Twilio API for R
+Thanks to Sean Kross for building the Twilio package for R:  
+☎️ An interface to the Twilio API for R
