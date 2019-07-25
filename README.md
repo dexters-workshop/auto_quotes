@@ -1,21 +1,27 @@
-# auto_quotes: ALPHA-TESTING STAGE
+# ☎️ auto_quotes: mini-project to add value to a meetup I'm part of
 
-Automated delivery service for habit-related quotes via SMS and member-contact info pulled from google-sheets.
+Automated delivery service that pulls member-contact info from google-sheets, then sends awesome quotes via SMS/Twilio.
 
-This is a project I'm working on as part of a meetup group that I'm involved with. The group is focused on building new healthy habits using the 'mini-habit' framework. I was adding really cool quotes related to 'habit-formation' to our google sheet each week - so that members could see them while trakcing their daily habits.
+This is a project I did as part of a meetup group that I'm involved with (called App4That). The group is focused on building new healthy habits using the 'mini-habit' framework. I was adding really cool quotes related to 'habit-formation' to our google sheet each week - so that members could see them while tracking their daily habits.
 
-I wanted to automate the process and have awesome quotes sent via text message and that's how this project got started.
+I wanted to automate the process and have awesome quotes (+ general messages) sent via text message and that's how this project got started.
 
-THE IDEA AND WHERE I'M HEADED  
-I'm creating a chron-job to pull habit-related quotes from a database I'm building. The idea is simple: 
+The idea is simple: 
 
-📌 Access member info from our Google Sheet.  
+📌 Access member contact info from our Google Sheet.  
 📌 Pull/Cleanse Phone data using reg-ex, tidyverse.  
 📌 Build a small database (DB) of quotes.  
 📌 Grab an awesome 'habit quote' from DB.  
-📌 Use SMS to text the group a Sweet quote.  
-📌 Set up on an automated schedule.    
+📌 Build Message by Combining Parts: prefix/quote/suffix
+📌 Use SMS to text the group a cool message w/an awesome quote!
+📌 Set up on an automated schedule (in the works).    
 
-I'm thinking of this as the first quote:  
+This was the first quote to the group: 
 
-"be the person with embarrassing goals and impressive results instead of one of the many people with impressive goals and embarrassing results"
+"Be the person with embarrassing goals and impressive results instead of one of the many people with impressive goals and embarrassing results" - Stephen Guise
+
+Feel free to reach out via LinkedIn if you have any questions
+
+Thanks to Sean Kross for building the Twilio package for R - 
+
+☎️ An interface to the Twilio API for R
