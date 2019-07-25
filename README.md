@@ -18,8 +18,7 @@ The idea is simple:
 
 This was the first quote to the group: 
 
-"Be the person with embarrassing goals and impressive results instead of one of the many people with impressive goals and embarrassing results"  
-- Stephen Guise
+"Be the person with embarrassing goals and impressive results instead of one of the many people with impressive goals and embarrassing results" - Stephen Guise
 
 Thanks to Sean Kross for building the Twilio package for R:  
 ☎️ An interface to the Twilio API for R
