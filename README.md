@@ -16,9 +16,16 @@ The idea is simple:
 📌 Use SMS to text the group a cool message w/an awesome quote!  
 📌 Set up on an automated schedule (in the works).  
 
-This was the first quote to the group: 
-
-"Be the person with embarrassing goals and impressive results instead of one of the many people with impressive goals and embarrassing results" - Stephen Guise
-
 Thanks to Sean Kross for building the Twilio package for R:  
 ☎️ An interface to the Twilio API for R
+
+
+This was the first message to the group: 
+
+Weekly Quote from the App4That Group: 
+
+"Be the person with embarrassing goals and impressive results instead of one of the many people with impressive goals and embarrassing results." - Stephen Guise
+
+Have a Great Week 🤓
+
+"Be the person with embarrassing goals and impressive results instead of one of the many people with impressive goals and embarrassing results" - Stephen Guise
