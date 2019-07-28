@@ -6,7 +6,9 @@
     # 3.0 Builds Message for SMS Send
     # 4.0 Send SMS Message/Quote to each Group Member
 
-# Current settings for our Monday/Friday Sends to group
+# 0.1 CURRENT SETUP ----
+
+# Sends a Monday + Friday Message to Group
 
 # Load libraries
 library(tidyverse)     # workhorse package
@@ -25,7 +27,7 @@ library(lubridate)     # for working with dates
 gs_auth()
 
 # Register my Google Sheet as a GS object
-app4that_gs_obj <- gs_title("app4that_test")
+app4that_gs_obj <- gs_title("app4that")
 #app4that_gs_obj <- gs_title("app4that")
 
 # 1.2 Get Member Contact Info ----
